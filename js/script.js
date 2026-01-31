@@ -125,6 +125,9 @@ function initNebulaScent() {
         initInteractiveElements();
         initParticles();
         initAromaSelector();
+    
+    // Инициализация анимаций
+    //initAnimations();
         
         // Запуск анимации после загрузки
         setTimeout(startMainAnimations, 500);
