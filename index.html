@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEBULA SCENT | Анимированная парфюмерия</title>
+    
+    <!-- Предзагрузка критических ресурсов -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Загрузка GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
     
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- jQuery загружаем асинхронно -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" async></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 </head>
 <body>
-   <div class="preloader">
+    <!-- Упрощенный прелоадер -->
+    <div class="preloader">
         <div class="preloader-content">
-            <div class="molecule-loader">
-                <div class="atom"></div>
-                <div class="atom"></div>
-                <div class="atom"></div>
-                <div class="electron"></div>
-                <div class="electron"></div>
-                <div class="electron"></div>
-            </div>
             <div class="loading-text">
                 <span class="loading-char">N</span>
                 <span class="loading-char">E</span>
@@ -46,7 +44,7 @@
             </div>
         </div>
     </div>
-
+    
     <canvas id="particle-canvas"></canvas>
     
     <div class="nebula-background">
@@ -86,17 +84,14 @@
                         <span>ОТКРЫТЬ НОВОЕ</span>
                     </button>
                 </div>
-                
-                <div class="scroll-indicator">
-                    <div class="scroll-line"></div>
-                    <div class="scroll-text">SCROLL TO DISCOVER</div>
-                </div>
             </div>
             
             <div class="floating-molecules">
                 <div class="molecule" data-molecule="1"></div>
                 <div class="molecule" data-molecule="2"></div>
                 <div class="molecule" data-molecule="3"></div>
+                <div class="molecule" data-molecule="4"></div>
+                <div class="molecule" data-molecule="5"></div>
             </div>
         </section>
 
@@ -110,10 +105,11 @@
             </div>
 
             <div class="gallery-container">
+                <!-- Карточки парфюмов с уникальными изображениями -->
                 <div class="perfume-card card-1" data-card="1">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="card-bg"></div>
+                            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2940');"></div>
                             
                             <div class="perfume-bottle">
                                 <div class="bottle-glass">
@@ -131,12 +127,6 @@
                             <div class="card-title">
                                 <h3 class="perfume-name">DIOR<span>SAUVAGE</span></h3>
                                 <div class="perfume-year">ELIXIR</div>
-                            </div>
-                            
-                            <div class="card-molecules">
-                                <div class="molecule-icon"></div>
-                                <div class="molecule-icon"></div>
-                                <div class="molecule-icon"></div>
                             </div>
                         </div>
                         
@@ -194,23 +184,24 @@
                     </div>
                     
                     <div class="card-particles"></div>
+                    <div class="card-hover-effect"></div>
                 </div>
 
                 <div class="perfume-card card-2" data-card="2">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="card-bg" style="background: linear-gradient(135deg, #0c4a6e 0%, #1e40af 100%);"></div>
+                            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1590736969958-8a3d4f16ca4f?q=80&w=2940');"></div>
                             
                             <div class="perfume-bottle">
-                                <div class="bottle-glass" style="--glass-tint: rgba(30, 58, 138, 0.3);">
+                                <div class="bottle-glass">
                                     <div class="bottle-liquid" data-color="#0c4a6e"></div>
                                     <div class="liquid-bubbles">
                                         <div class="bubble bubble-1"></div>
                                         <div class="bubble bubble-2"></div>
                                     </div>
                                 </div>
-                                <div class="bottle-cap" style="--cap-color: #1e293b;"></div>
-                                <div class="bottle-glow" style="--glow-color: #3b82f6;"></div>
+                                <div class="bottle-cap"></div>
+                                <div class="bottle-glow"></div>
                             </div>
                             
                             <div class="card-title">
@@ -273,15 +264,16 @@
                     </div>
                     
                     <div class="card-particles"></div>
+                    <div class="card-hover-effect"></div>
                 </div>
 
                 <div class="perfume-card card-3" data-card="3">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="card-bg" style="background: linear-gradient(135deg, #422006 0%, #92400e 100%);"></div>
+                            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1543858741-6c6c0b27efd3?q=80&w=2940');"></div>
                             
                             <div class="perfume-bottle">
-                                <div class="bottle-glass" style="--glass-tint: rgba(120, 53, 15, 0.4);">
+                                <div class="bottle-glass">
                                     <div class="bottle-liquid" data-color="#7c2d12"></div>
                                     <div class="liquid-bubbles">
                                         <div class="bubble bubble-1"></div>
@@ -289,8 +281,8 @@
                                         <div class="bubble bubble-3"></div>
                                     </div>
                                 </div>
-                                <div class="bottle-cap" style="--cap-color: #1c1917;"></div>
-                                <div class="bottle-glow" style="--glow-color: #d97706;"></div>
+                                <div class="bottle-cap"></div>
+                                <div class="bottle-glow"></div>
                             </div>
                             
                             <div class="card-title">
@@ -353,6 +345,247 @@
                     </div>
                     
                     <div class="card-particles"></div>
+                    <div class="card-hover-effect"></div>
+                </div>
+                
+                <div class="perfume-card card-4" data-card="4">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1596040033221-a2f28d0e05d5?q=80&w=2940');"></div>
+                            
+                            <div class="perfume-bottle">
+                                <div class="bottle-glass">
+                                    <div class="bottle-liquid" data-color="#064e3b"></div>
+                                    <div class="liquid-bubbles">
+                                        <div class="bubble bubble-1"></div>
+                                        <div class="bubble bubble-2"></div>
+                                    </div>
+                                </div>
+                                <div class="bottle-cap"></div>
+                                <div class="bottle-glow"></div>
+                            </div>
+                            
+                            <div class="card-title">
+                                <h3 class="perfume-name">CREED<span>AVENTUS</span></h3>
+                                <div class="perfume-year">COLOGNE</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-back">
+                            <div class="card-content">
+                                <div class="perfume-notes">
+                                    <div class="note-category">
+                                        <h4>ВЕРХНИЕ НОТЫ</h4>
+                                        <p>Ананас, Черная смородина</p>
+                                    </div>
+                                    <div class="note-category">
+                                        <h4>НОТЫ СЕРДЦА</h4>
+                                        <p>Береза, Жасмин</p>
+                                    </div>
+                                    <div class="note-category">
+                                        <h4>БАЗОВЫЕ НОТЫ</h4>
+                                        <p>Мох, Мускус</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="perfume-stats">
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="92"></div>
+                                        </div>
+                                        <span>Стойкость</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="88"></div>
+                                        </div>
+                                        <span>Проекция</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="85"></div>
+                                        </div>
+                                        <span>Универсальность</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="card-btn explore-card">
+                                    <span>ИССЛЕДОВАТЬ</span>
+                                    <div class="btn-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-orbits">
+                        <div class="orbit"></div>
+                        <div class="orbit"></div>
+                    </div>
+                    
+                    <div class="card-particles"></div>
+                    <div class="card-hover-effect"></div>
+                </div>
+                
+                <div class="perfume-card card-5" data-card="5">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1512302267258-2c2dcd153b95?q=80&w=2940');"></div>
+                            
+                            <div class="perfume-bottle">
+                                <div class="bottle-glass">
+                                    <div class="bottle-liquid" data-color="#1e3a8a"></div>
+                                    <div class="liquid-bubbles">
+                                        <div class="bubble bubble-1"></div>
+                                        <div class="bubble bubble-2"></div>
+                                    </div>
+                                </div>
+                                <div class="bottle-cap"></div>
+                                <div class="bottle-glow"></div>
+                            </div>
+                            
+                            <div class="card-title">
+                                <h3 class="perfume-name">PACO RABANNE<span>1 MILLION</span></h3>
+                                <div class="perfume-year">ELIXIR</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-back">
+                            <div class="card-content">
+                                <div class="perfume-notes">
+                                    <div class="note-category">
+                                        <h4>ВЕРХНИЕ НОТЫ</h4>
+                                        <p>Грейпфрут, Мята</p>
+                                    </div>
+                                    <div class="note-category">
+                                        <h4>НОТЫ СЕРДЦА</h4>
+                                        <p>Кожа, Корица</p>
+                                    </div>
+                                    <div class="note-category">
+                                        <h4>БАЗОВЫЕ НОТЫ</h4>
+                                        <p>Амбра, Древесные ноты</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="perfume-stats">
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="87"></div>
+                                        </div>
+                                        <span>Стойкость</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="93"></div>
+                                        </div>
+                                        <span>Проекция</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="80"></div>
+                                        </div>
+                                        <span>Универсальность</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="card-btn explore-card">
+                                    <span>ИССЛЕДОВАТЬ</span>
+                                    <div class="btn-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-orbits">
+                        <div class="orbit"></div>
+                        <div class="orbit"></div>
+                    </div>
+                    
+                    <div class="card-particles"></div>
+                    <div class="card-hover-effect"></div>
+                </div>
+                
+                <div class="perfume-card card-6" data-card="6">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1612786072424-3d697b4a0d73?q=80&w=2940');"></div>
+                            
+                            <div class="perfume-bottle">
+                                <div class="bottle-glass">
+                                    <div class="bottle-liquid" data-color="#451a03"></div>
+                                    <div class="liquid-bubbles">
+                                        <div class="bubble bubble-1"></div>
+                                        <div class="bubble bubble-2"></div>
+                                    </div>
+                                </div>
+                                <div class="bottle-cap"></div>
+                                <div class="bottle-glow"></div>
+                            </div>
+                            
+                            <div class="card-title">
+                                <h3 class="perfume-name">YVES SAINT LAURENT<span>LA NUIT DE L'HOMME</span></h3>
+                                <div class="perfume-year">BLEU ELECTRIQUE</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-back">
+                            <div class="card-content">
+                                <div class="perfume-notes">
+                                    <div class="note-category">
+                                        <h4>ВЕРХНИЕ НОТЫ</h4>
+                                        <p>Кардамон, Бергамот</p>
+                                    </div>
+                                    <div class="note-category">
+                                        <h4>НОТЫ СЕРДЦА</h4>
+                                        <p>Кедр, Ветивер</p>
+                                    </div>
+                                    <div class="note-category">
+                                        <h4>БАЗОВЫЕ НОТЫ</h4>
+                                        <p>Амбра, Мускус</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="perfume-stats">
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="82"></div>
+                                        </div>
+                                        <span>Стойкость</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="75"></div>
+                                        </div>
+                                        <span>Проекция</span>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-value="88"></div>
+                                        </div>
+                                        <span>Универсальность</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="card-btn explore-card">
+                                    <span>ИССЛЕДОВАТЬ</span>
+                                    <div class="btn-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-orbits">
+                        <div class="orbit"></div>
+                        <div class="orbit"></div>
+                    </div>
+                    
+                    <div class="card-particles"></div>
+                    <div class="card-hover-effect"></div>
                 </div>
             </div>
             
@@ -360,6 +593,18 @@
                 <div class="nav-dot active" data-card="1"></div>
                 <div class="nav-dot" data-card="2"></div>
                 <div class="nav-dot" data-card="3"></div>
+                <div class="nav-dot" data-card="4"></div>
+                <div class="nav-dot" data-card="5"></div>
+                <div class="nav-dot" data-card="6"></div>
+            </div>
+            
+            <div class="gallery-controls">
+                <button class="gallery-prev" id="gallery-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-next" id="gallery-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
@@ -374,9 +619,11 @@
                     <div class="electron electron-1"></div>
                     <div class="electron electron-2"></div>
                     <div class="electron electron-3"></div>
+                    <div class="electron electron-4"></div>
                     <div class="bond bond-1"></div>
                     <div class="bond bond-2"></div>
                     <div class="bond bond-3"></div>
+                    <div class="bond bond-4"></div>
                 </div>
                 
                 <div class="parallax-text">
@@ -389,6 +636,66 @@
                         Каждая молекула аромата — это точный расчет и искусство. 
                         Откройте для себя химию, стоящую за самыми знаменитыми парфюмами.
                     </p>
+                    <button class="parallax-btn" id="learn-more-btn">
+                        <span>УЗНАТЬ БОЛЬШЕ</span>
+                        <i class="fas fa-flask"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="floating-formulas">
+                <div class="formula">C<sub>10</sub>H<sub>16</sub>O</div>
+                <div class="formula">C<sub>9</sub>H<sub>10</sub>O<sub>3</sub></div>
+                <div class="formula">C<sub>12</sub>H<sub>22</sub>O<sub>2</sub></div>
+                <div class="formula">C<sub>15</sub>H<sub>26</sub>O</div>
+            </div>
+        </section>
+        
+        <!-- Новая секция: интерактивный селектор ароматов -->
+        <section class="aroma-selector">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-part">ПОДБЕРИ</span>
+                    <span class="title-part">СВОЙ АРОМАТ</span>
+                </h2>
+                <p class="section-desc">Ответьте на несколько вопросов и мы подберем идеальный парфюм для вас</p>
+            </div>
+            
+            <div class="selector-container">
+                <div class="selector-step active" data-step="1">
+                    <h3>Какой сезон вам нужен аромат?</h3>
+                    <div class="selector-options">
+                        <div class="option" data-value="winter">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Зима</span>
+                        </div>
+                        <div class="option" data-value="spring">
+                            <i class="fas fa-seedling"></i>
+                            <span>Весна</span>
+                        </div>
+                        <div class="option" data-value="summer">
+                            <i class="fas fa-sun"></i>
+                            <span>Лето</span>
+                        </div>
+                        <div class="option" data-value="autumn">
+                            <i class="fas fa-leaf"></i>
+                            <span>Осень</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="selector-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Шаг 1 из 3</div>
+                </div>
+                
+                <div class="selector-result" id="selector-result">
+                    <h3>Ваш идеальный аромат:</h3>
+                    <div class="result-card" id="result-card">
+                        <!-- Результат будет подгружен динамически -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -414,6 +721,13 @@
                     <h3 class="logo-text">NEBULA<span>SCENT</span></h3>
                 </div>
                 
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+                
                 <div class="footer-cta">
                     <button class="footer-btn" id="contact-btn">
                         <span>СВЯЗАТЬСЯ С НАМИ</span>
@@ -423,6 +737,7 @@
                 
                 <div class="footer-info">
                     <p>© 2026 Nebula Scent. Вселенная ароматов.</p>
+                    <p class="footer-subtext">Это демонстрационный проект для показа анимаций</p>
                 </div>
             </div>
         </footer>
@@ -440,16 +755,82 @@
             </div>
         </div>
     </div>
-
-    <!-- Аудио элементы для эффектов -->
-    <audio id="hover-sound" preload="auto">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-positive-notification-905.mp3" type="audio/mpeg">
-    </audio>
     
-    <audio id="click-sound" preload="auto">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
-    </audio>
+    <!-- Конфигурационный объект с данными о парфюмах -->
+    <script type="application/json" id="perfume-data">
+        {
+            "perfumes": [
+                {
+                    "id": 1,
+                    "name": "DIOR SAUVAGE ELIXIR",
+                    "description": "Эликсир версия культового аромата Dior Sauvage представляет собой более интенсивную и чувственную интерпретацию. Глубокий амброво-древесный аккорд с нотами лаванды и пачули создает магнитное присутствие.",
+                    "notes": ["Бергамот", "Перец", "Лаванда", "Пачули", "Амбра", "Кедр"],
+                    "intensity": 95,
+                    "longevity": 12,
+                    "season": "Осень/Зима",
+                    "occasion": "Вечерний выход",
+                    "price": "12 500 ₽"
+                },
+                {
+                    "id": 2,
+                    "name": "BLEU DE CHANEL PARFUM",
+                    "description": "Самая интенсивная версия культового аромата Chanel. Глубокий древесно-амбровый букет с нотами цитрусов и имбиря для мужчины, который уверен в своей силе.",
+                    "notes": ["Цитрус", "Мята", "Имбирь", "Жасмин", "Сандал", "Лабданум"],
+                    "intensity": 90,
+                    "longevity": 14,
+                    "season": "Круглый год",
+                    "occasion": "Универсальный",
+                    "price": "14 200 ₽"
+                },
+                {
+                    "id": 3,
+                    "name": "TOM FORD OUD WOOD",
+                    "description": "Роскошный аромат из коллекции Private Blend. Сочетание редкого уду, сандала и ветивера создает утонченный и загадочный образ для истинных ценителей.",
+                    "notes": ["Кардамон", "Роза", "Сандал", "Ветивер", "Уд", "Амбра"],
+                    "intensity": 98,
+                    "longevity": 16,
+                    "season": "Вечер/Особый случай",
+                    "occasion": "Особые события",
+                    "price": "18 900 ₽"
+                },
+                {
+                    "id": 4,
+                    "name": "CREED AVENTUS",
+                    "description": "Легендарный аромат, вдохновленный жизнью императора. Сочетание фруктовых, древесных и мускусных нот создает впечатляющий и запоминающийся шлейф.",
+                    "notes": ["Ананас", "Черная смородина", "Береза", "Жасмин", "Мох", "Мускус"],
+                    "intensity": 92,
+                    "longevity": 10,
+                    "season": "Весна/Лето",
+                    "occasion": "Дневной/Вечерний",
+                    "price": "21 500 ₽"
+                },
+                {
+                    "id": 5,
+                    "name": "PACO RABANNE 1 MILLION",
+                    "description": "Смелый и дерзкий аромат, сочетающий свежесть цитрусов с теплыми нотами кожи и корицы. Идеален для уверенных в себе мужчин.",
+                    "notes": ["Грейпфрут", "Мята", "Кожа", "Корица", "Амбра", "Древесные ноты"],
+                    "intensity": 87,
+                    "longevity": 8,
+                    "season": "Осень/Зима",
+                    "occasion": "Клуб/Вечеринка",
+                    "price": "6 800 ₽"
+                },
+                {
+                    "id": 6,
+                    "name": "YVES SAINT LAURENT LA NUIT DE L'HOMME",
+                    "description": "Соблазнительный и загадочный аромат для романтических вечеров. Сочетание пряных и древесных нот создает интимную атмосферу.",
+                    "notes": ["Кардамон", "Бергамот", "Кедр", "Ветивер", "Амбра", "Мускус"],
+                    "intensity": 82,
+                    "longevity": 7,
+                    "season": "Осень/Зима",
+                    "occasion": "Романтическая встреча",
+                    "price": "8 400 ₽"
+                }
+            ]
+        }
+    </script>
 
-    <script src="js/script.js"></script>
+    <!-- Основной скрипт -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
