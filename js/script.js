@@ -2120,6 +2120,6 @@ function optimizeAnimations() {
 }
 
     // Наблюдаем за анимированными элементами
-    document.querySelectorAll('.perfume-card, .molecule, .formula').forEach(el => {
+  /*  document.querySelectorAll('.perfume-card, .molecule, .formula').forEach(el => {
         observer.observe(el);
-    });
+    }); */

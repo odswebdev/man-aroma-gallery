@@ -145,7 +145,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    border-right: 3px solid transparent;
+  /*  border-right: 3px solid transparent; */
     opacity: 0;
 }
 
@@ -2349,6 +2349,10 @@ body {
     display: none;
 }
 
+.selector-result > h3 {
+    margin-bottom: 30px;
+}
+
 @media (max-width: 768px) {
     .mobile-nav-toggle {
         display: block;
@@ -2375,6 +2379,58 @@ body {
     button:active {
         transform: scale(0.95);
         transition: transform 0.1s;
+    }
+
+    .hero-subtitle {
+        overflow: visible;
+    }
+
+    .typewriter-text {
+        white-space: wrap;
+    }
+
+    .selector-container {
+        padding: 1.5rem;
+    }
+
+    .selector-result > h3 {
+        margin-bottom: 30px;
+    } 
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .perfume-gallery {
+        padding: 30px;
+    }
+
+    .loading-text {
+        font-size: 1.5rem !important;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .loading-char {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .modal-bar {
+        min-width: 140px;
+        width: 100%;
+    }
+
+    .card-content {
+        min-height: 490px;
+    }
+
+    .parallax-section {
+        height: 100%;
+    }
+
+    .modal-content {
+        padding: 1rem;
     }
 }
 
