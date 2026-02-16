@@ -1989,13 +1989,11 @@ function playSound(type) {
 // Оптимизация для мобильных устройств
 function optimizeForMobile() {
     if ('ontouchstart' in window) {
-        // Уменьшаем количество частиц на мобильных
         const canvas = document.getElementById('particle-canvas');
         if (canvas) {
-            canvas.style.display = 'none'; // Скрываем на мобильных для производительности
+            canvas.style.display = 'none';
         }
-        
-        // Уменьшаем сложность анимаций
+
         gsap.globalTimeline.timeScale(1.2);
     }
 }
